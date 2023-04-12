@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pierre Fontaine Portfolio</title>
+  <link rel="stylesheet" id="stylesheet" href="pierre.css">
+  <style>
+    .grid , .grid-3D {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr) minmax(min-content, max-content);
+      padding-bottom: 25px;
+      cursor: pointer;
+      text-align: center;
+      align-items:center;
+    }
+    .grid-item , .grid-item-3D {
+      background-color: #ffffff;
+      text-align: center;
+      align-items:center;
+    }
+    @media screen and (max-width: 1500px) {
+      .grid , .grid-3D{
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pierre Fontaine Portfolio</h1>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aboutme.html">About Me</a>
+    <a href="illustrations.html" style="font-weight:bold;">Illustrations</a>
+    <a href="animation.html">Animation</a>
+    <a href="paper.html">Paper Engineering</a>
+    <a href="design.html">Design</a>
+  </nav><br>
+<div class="2D">
+  <h3 style="font-size: 32px;">2-D Illustrations:</h3><h3 style="padding-bottom: 25px; font-weight:lighter;"">Click on an image to view more images within the category.</h3>
+  <div class="grid">
+    <div class="grid-item">
+      <table>
+        <tr>
+          <td style="padding-bottom:10px; font-size: 20px;"><h3>MasterKidz Illustrations:</h3></td>
+        </tr>
+        <tr>
+          <td style="height: 325px; cursor: pointer;"><img src="Master/Animals_Chunky_Puzzle_v3.jpg" onclick="openPopup5('Master/Animals_Chunky_Puzzle_v3.jpg', 'This wooden toy was recreated with 3D software to alter the angle of the original photography. The render was then used this to create a “marker rendering” in Adobe Photoshop.')"></td>
+        </tr>
+      </table>
+    </div>
+    <div class="grid-item">
+      <table>
+        <tr>
+          <td style="padding-bottom:10px; font-size: 20px;"><h3>Cartoon Designs:</h3></td>
+        </tr>
+        <tr>
+          <td style="height: 325px; cursor: pointer;"><img src="2D_illi/cartoon/family.jpg" onclick="openPopup2('2D_illi/cartoon/family.jpg', 'Traditional Pen and Ink drawing colored in Adobe Photoshop. The intent was to create a generic non-human family where some of the gender roles were reversed.')"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+    <div class="popup" id="popup1">
+      <div class="popup-content">
+        <span class="close1" onclick="closePopup1()">X</span>
+        <img class="popup-image1" id="popup-image1">
+        <p id="popup-description1"></p>
+        <a class="prev" onclick="prevImage1()">&#10094;</a>
+        <a class="next" onclick="nextImage1()">&#10095;</a>
+      </div>
+    </div>
+    <div class="popup" id="popup2">
+        <div class="popup-content">
+          <span class="close2" onclick="closePopup2()">X</span>
+          <img class="popup-image2" id="popup-image2">
+          <p id="popup-description2"></p>
+          <a class="prev" onclick="prevImage2()">&#10094;</a>
+          <a class="next" onclick="nextImage2()">&#10095;</a>
+        </div>
+      </div>
+      <div class="popup" id="popup3">
+        <div class="popup-content">
+          <span class="close3" onclick="closePopup3()">X</span>
+          <img class="popup-image" id="popup-image3">
+          <p id="popup-description3"></p>
+          <a class="prev" onclick="prevImage3()">&#10094;</a>
+          <a class="next" onclick="nextImage3()">&#10095;</a>
+        </div>
+      </div>
+
+    <script id="image_pop_1">
+      let images1 = ['2D_illi/Book/Destiny_Galaxy.jpg', '2D_illi/Book/Destiny_Planet.jpg', '2D_illi/Book/Formation_cover_v02.jpg', '2D_illi/Book/Membrane_cover01_300dpi.jpg'];
+      let descriptions1 = ['All 3D elements were created and rendered in Carrara 3D. Each element was then composited in Adobe Photoshop.', 
+      'All 3D elements were created and rendered in Carrara 3D. Each element was then composited in Adobe Photoshop.', 
+      'All 3D elements were created and rendered in Carrara 3D. Each element was then composited in Adobe Photoshop.' , 
+      'All 3D elements were created and rendered in Carrara 3D. Each element was then composited in Adobe Photoshop.'];
+      let currentImage1 = '';
+      let currentIndex1 = 0;
+
+      function openPopup1(image1, description1) {
+        currentImage1 = image1;
+        currentIndex1 = images1.indexOf(image1);
+        document.getElementById('popup-image1').src = image1;
+        document.getElementById('popup-description1').textContent = description1;
+        document.getElementById('popup1').style.display = 'block';
+      }
+
+      function closePopup1() {
+        document.getElementById('popup1').style.display = 'none';
+      }
+
+      function prevImage1() {
+        currentIndex1 = (currentIndex1 - 1 + images1.length) % images1.length;
+        currentImage1 = images1[currentIndex1];
+        document.getElementById('popup-image1').src = currentImage1;
+        document.getElementById('popup-description1').textContent = descriptions1[currentIndex1];
+      }
+
+      function nextImage1() {
+        currentIndex1 = (currentIndex1 + 1) % images1.length;
+        currentImage1 = images1[currentIndex1];
+        document.getElementById('popup-image1').src = currentImage1;
+        document.getElementById('popup-description1').textContent = descriptions1[currentIndex1];
+      }
+    </script>
+    <script id="image_pop_2">
+        let images2 = ['2D_illi/cartoon/family.jpg','2D_illi/cartoon/character_designs.bmp', '2D_illi/cartoon/Incred-mail-toast.bmp', '2D_illi/cartoon/nightshirt_copy.jpg', '2D_illi/cartoon/webtop_activity.jpg'];
+        let descriptions2 = ['Traditional Pen and Ink drawing colored in Adobe Photoshop. The intent was to create a generic non-human family where some of the gender roles were reversed.',
+        'Both of these characters were created for streaming content companies.', 
+        'The Toast of the Town character was created by Peter Conlon. I designed this mail room environment for an interactive children’s website.', 
+        'Traditional Pen and Ink drawing colored in Adobe Photoshop.', 
+        'Both character design and environment was designed by me as a environment to launch various games and activities for an interactive children’s website.'];
+        let currentImage2 = '';
+        let currentIndex2 = 0;
+  
+        function openPopup2(image2, description2) {
+          currentImage2 = image2;
+          currentIndex2 = images2.indexOf(image2);
+          document.getElementById('popup-image2').src = image2;
+          document.getElementById('popup-description2').textContent = description2;
+          document.getElementById('popup2').style.display = 'block';
+        }
+  
+        function closePopup2() {
+          document.getElementById('popup2').style.display = 'none';
+        }
+  
+        function prevImage2() {
+          currentIndex2 = (currentIndex2 - 1 + images2.length) % images2.length;
+          currentImage2 = images2[currentIndex2];
+          document.getElementById('popup-image2').src = currentImage2;
+          document.getElementById('popup-description2').textContent = descriptions2[currentIndex2];
+        }
+  
+        function nextImage2() {
+          currentIndex2 = (currentIndex2 + 1) % images2.length;
+          currentImage2 = images2[currentIndex2];
+          document.getElementById('popup-image2').src = currentImage2;
+          document.getElementById('popup-description2').textContent = descriptions2[currentIndex2];
+        }
+      </script>
+</div>
+<div class="3D">
+  <h3 style="font-size: 32px;">3-D Illustrations:</h3><h3 style="padding-bottom: 25px; font-weight:lighter;"">Click on an image to view more images within the category.</h3>
+  <div class="grid-3D">
+    <div class="grid-item-3D">
+      <table>
+        <tr>
+          <td style="padding-bottom:10px; font-size: 20px;"><h3>Space Adventures:</h3></td>
+        </tr>
+        <tr>
+          <td style="height: 275px; cursor: pointer; padding-bottom:50px;"><img src="2D_illi/space/car_render.jpg" onclick="openPopup4('2D_illi/space/car_render.jpg', 'Modeled and textured in Curvy 3D. All the elements were rendered in Carrara 3D and composited in Adobe Photoshop.')"></td>
+        </tr>
+      </table>
+    </div>
+    <div class="grid-item-3D">
+      <table>
+        <tr>
+          <td style="padding-bottom:10px; font-size: 20px;"><h3>Book Covers:</h3></td>
+        </tr>
+        <tr>
+          <td style="height: 325px; cursor: pointer;"><img src="2D_illi/Book/Destiny_Galaxy.jpg" onclick="openPopup1('2D_illi/Book/Destiny_Galaxy.jpg', 'All 3D elements were created and rendered in Carrara 3D. Each element was then composited in Adobe Photoshop.')"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+    <div class="popup" id="popup4">
+      <div class="popup-content">
+        <span class="close4" onclick="closePopup4()">X</span>
+        <img class="popup-image" id="popup-image4">
+        <p id="popup-description4"></p>
+        <a class="prev" onclick="prevImage4()">&#10094;</a>
+        <a class="next" onclick="nextImage4()">&#10095;</a>
+      </div>
+    </div>
+    <div class="popup" id="popup5">
+        <div class="popup-content">
+          <span class="close5" onclick="closePopup5()">X</span>
+          <img class="popup-image" id="popup-image5">
+          <p id="popup-description5"></p>
+          <a class="prev" onclick="prevImage5()">&#10094;</a>
+          <a class="next" onclick="nextImage5()">&#10095;</a>
+        </div>
+      </div>
+      <div class="popup" id="popup6">
+        <div class="popup-content">
+          <span class="close6" onclick="closePopup6()">X</span>
+          <img class="popup-image" id="popup-image6">
+          <p id="popup-description6"></p>
+          <a class="prev" onclick="prevImage6()">&#10094;</a>
+          <a class="next" onclick="nextImage6()">&#10095;</a>
+        </div>
+      </div>
+      <script id="image_pop_4">
+        let images4 = ['2D_illi/space/car_render.jpg', '2D_illi/space/curvy_ship.jpg', '2D_illi/space/escape2_no_crop.jpg', '2D_illi/space/Helix09.bmp', '2D_illi/space/MARS2.bmp', '2D_illi/space/Millenium_Wars_flat.jpg', '2D_illi/3D_misc/SCOUTSUB.jpg', '2D_illi/3D_misc/teapot_ship_render_v2.jpg'];
+        let descriptions4 = ['Modeled and textured in Curvy 3D. All the elements were rendered in Carrara 3D and composited in Adobe Photoshop.', 
+        'Modeled and textured in Curvy 3D. All the elements were rendered in Carrara 3D and composited in Adobe Photoshop.', 
+        '3D elements modeled and rendered in Carrara 3D and composited in Adobe Photoshop.', 
+        'This image was started in Autodesk Animator then modified in Adobe Photoshop.', 
+        'Modeled and rendered on a Commodore Amiga computer using Caligari 24 software.', 
+        'The ship models were created and textured using Curvy 3D. These models were imported as .obj files into Carrara 3D where they were rendered. Each element was then composited in Adobe Photoshop.', 
+        'Modeled and rendered on a Commodore Amiga computer using Alladin 4D software.', 
+        'Modeled and textured in Curvy 3D. All the elements were rendered in Carrara 3D and composited in Adobe Photoshop.'];
+        let currentImage4 = '';
+        let currentIndex4 = 0;
+  
+        function openPopup4(image4, description4) {
+          currentImage4 = image4;
+          currentIndex4 = images4.indexOf(image4);
+          document.getElementById('popup-image4').src = image4;
+          document.getElementById('popup-description4').textContent = description4;
+          document.getElementById('popup4').style.display = 'block';
+        }
+  
+        function closePopup4() {
+          document.getElementById('popup4').style.display = 'none';
+        }
+  
+        function prevImage4() {
+          currentIndex4 = (currentIndex4 - 1 + images4.length) % images4.length;
+          currentImage4 = images4[currentIndex4];
+          document.getElementById('popup-image4').src = currentImage4;
+          document.getElementById('popup-description4').textContent = descriptions4[currentIndex4];
+        }
+  
+        function nextImage4() {
+          currentIndex4 = (currentIndex4 + 1) % images4.length;
+          currentImage4 = images4[currentIndex4];
+          document.getElementById('popup-image4').src = currentImage4;
+          document.getElementById('popup-description4').textContent = descriptions4[currentIndex4];
+        }
+      </script>
+    <script id="image_pop_5">
+      let images5 = ['Master/Animals_Chunky_Puzzle_v3.jpg', 'Master/Beeping_Animals_color_render_v2.jpg', 'Master/Geometric_Sliding_Game_render.jpg', 'Master/Grasping_Render.jpg', 'Master/Kitchen_rendered.jpg', 'Master/Push_Along_render.jpg', 'Master/Ride-On_Shape_Sorter.jpg', 'Master/Sliding_Game_marker_render_v2.jpg', 'Master/Vehicle_Set_Marker_Render_high_res.jpg'];
+      let descriptions5 = ['This wooden toy was recreated with 3D software to alter the angle of the original photography. The render was then used this to create a “marker rendering” in Adobe Photoshop.', 
+      'This wooden toy was recreated with 3D software to alter the angle of the original photography. The render was then used this to create a “marker rendering” in Adobe Photoshop.', 
+      'This wooden toy was recreated with 3D software to alter the angle of the original photography. The render was then used this to create a “marker rendering” in Adobe Photoshop.', 
+      'This wooden toy was recreated with 3D software to alter the angle of the original photography. The render was then used this to create a “marker rendering” in Adobe Photoshop.' , 
+      'This wooden toy was recreated with 3D software to alter the angle of the original photography. The render was then used this to create a “marker rendering” in Adobe Photoshop.', 
+      'This wooden toy was recreated with 3D software to alter the angle of the original photography. The render was then used this to create a “marker rendering” in Adobe Photoshop.', 
+      'This wooden toy was recreated with 3D software to alter the angle of the original photography. The render was then used this to create a “marker rendering” in Adobe Photoshop.', 
+      'This wooden toy was recreated with 3D software to alter the angle of the original photography. The render was then used this to create a “marker rendering” in Adobe Photoshop.', 
+      'This wooden toy was recreated with 3D software to alter the angle of the original photography. The render was then used this to create a “marker rendering” in Adobe Photoshop.'];
+      let currentImage5 = '';
+      let currentIndex5 = 0;
+  
+      function openPopup5(image5, description5) {
+        currentImage5 = image5;
+        currentIndex5 = images5.indexOf(image5);
+        document.getElementById('popup-image5').src = image5;
+        document.getElementById('popup-description5').textContent = description5;
+        document.getElementById('popup5').style.display = 'block';
+      }
+  
+      function closePopup5() {
+        document.getElementById('popup5').style.display = 'none';
+      }
+  
+      function prevImage5() {
+        currentIndex5 = (currentIndex5 - 1 + images5.length) % images5.length;
+        currentImage5 = images5[currentIndex5];
+        document.getElementById('popup-image5').src = currentImage5;
+        document.getElementById('popup-description5').textContent = descriptions5[currentIndex5];
+      }
+  
+      function nextImage5() {
+        currentIndex5 = (currentIndex5 + 1) % images5.length;
+        currentImage5 = images5[currentIndex5];
+        document.getElementById('popup-image5').src = currentImage5;
+        document.getElementById('popup-description5').textContent = descriptions5[currentIndex5];
+      }
+    </script>
+      </div>
+
+  <!-- Add the website footer -->
+  <footer>
+    <p>© 2023 Pierre Fontaine's Portfolio. All rights reserved.</p>
+    <p>Home: (914) 693-2356 | Mobile: (914) 413-2789</p>
+    <p>pfontaine123@hotmail.com </p>
+  </footer>
+</body>
+</html>

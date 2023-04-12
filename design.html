@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pierre Fontaine Portfolio</title>
+  <link rel="stylesheet" id="stylesheet" href="pierre.css">
+  <style>
+    #video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+  }
+  #video-container iframe {
+    display: none;
+  }
+  #video-container iframe.active {
+    display: block;
+  }
+  #video-switcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+  #video-switcher span {
+    cursor: pointer;
+    padding: 0 10px;
+  }
+  #video-switcher span.selected {
+    font-weight: bold;
+  }
+  .grid-container {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+    }
+    .grid-item {
+        padding:30px;
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 1000px) {
+      .grid-container{
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pierre Fontaine Portfolio</h1>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aboutme.html">About Me</a>
+    <a href="illustrations.html">Illustrations</a>
+    <a href="animation.html">Animation</a>
+    <a href="paper.html">Paper Engineering</a>
+    <a href="design.html" style="font-weight:bold;">Design</a>
+  </nav><br><br>
+
+
+      <div id="video-container">
+        <iframe id="video1" width="888" height="500" src="https://www.youtube.com/embed/qyI1pX8y1l0" frameborder="0" allowfullscreen></iframe>
+        <iframe id="video2" width="888" height="500" src="https://www.youtube.com/embed/e7UuDDGAZQc" frameborder="0" allowfullscreen></iframe>
+      </div>
+      
+      <div id="video-switcher">
+        <span id="video1-switch" class="selected" style="border: 1px black; font-size: 20px;">Creating A Plate in CAD</span>
+        <span id="video2-switch" style="border: 1px black; font-size: 20px;">Creating 3D Prints</span>
+      </div>
+      
+      <script>
+        const video1Switch = document.getElementById('video1-switch');
+        const video2Switch = document.getElementById('video2-switch');
+        const video1 = document.getElementById('video1');
+        const video2 = document.getElementById('video2');
+      
+        // Set the first video as active
+        video1.classList.add('active');
+      
+        // Add click event listeners to the video switches
+        video1Switch.addEventListener('click', function() {
+          video2Switch.classList.remove('selected');
+          video1Switch.classList.add('selected');
+          video2.classList.remove('active');
+          video1.classList.add('active');
+        });
+      
+        video2Switch.addEventListener('click', function() {
+          video1Switch.classList.remove('selected');
+          video2Switch.classList.add('selected');
+          video1.classList.remove('active');
+          video2.classList.add('active');
+        });
+      </script>
+  <div class="grid-container">
+    <div class="grid-item">
+        <img src="design/Beaded_Tray_Mechanical.jpg" onclick="openPopup8('design/Beaded_Tray_Mechanical.jpg', 'Mechanical for melamine tray designed for Amscan, Inc. using Adobe Illustrator.')">
+    </div>
+    <div class="grid-item">
+        <img src="design/Bunny_Cup_Mechanical.jpg" onclick="openPopup8('design/Bunny_Cup_Mechanical.jpg', 'The sippy cup design originated with Amscan’s design team. I created the final mechanical using Adobe Illustrator. The photos are the actual item sold at Party City stores for comparison.')">
+        </div>
+      <div class="grid-item">
+        <img src="design/Flamingo_Cup_Mechanical.jpg" onclick="openPopup8('design/Flamingo_Cup_Mechanical.jpg', 'Sippy Cup designed by me for Amscan, Inc. alongside photos of the actual item sold at Party City stores for comparison.')">
+      </div>
+      <div class="grid-item">
+        <img src="design/Mummy_Popper_Mechanical.jpg" onclick="openPopup8('design/Mummy_Popper_Mechanical.jpg', 'Party favor designed by me for Amscan, Inc. alongside photos of the actual item sold at Party City stores for comparison.')">
+      </div>
+      <div class="grid-item">
+        <img src="design/Tiara_PKG.jpg" onclick="openPopup8('design/Tiara_PKG.jpg', 'Product and packaging designed by me for Amscan, Inc.')">
+      </div>
+      <div class="grid-item">
+        <img src="design/Wine_Glass_Mechanical.jpg" onclick="openPopup8('design/Wine_Glass_Mechanical.jpg', 'Product designed by me for Amscan, Inc. This wine glass is part of a series of “upscale” plastic cups I designed which were made to look like fancy cut glass.')">
+      </div>
+  </div>
+  <div class="popup" id="popup8">
+    <div class="popup-content">
+      <span class="close8" onclick="closePopup8()">X</span>
+      <img class="popup-image" id="popup-image8">
+      <p id="popup-description8"></p>
+      <a class="prev" onclick="prevImage8()">&#10094;</a>
+      <a class="next" onclick="nextImage8()">&#10095;</a>
+    </div>
+  </div>
+  <script id="image_pop_8">
+    let images8 = ['design/Beaded_Tray_Mechanical.jpg', 'design/Bunny_Cup_Mechanical.jpg', 'design/Flamingo_Cup_Mechanical.jpg', 'design/Mummy_Popper_Mechanical.jpg', 'design/Tiara_PKG.jpg', 'design/Wine_Glass_Mechanical.jpg'];
+    let descriptions8 = ['Mechanical for melamine tray designed for Amscan, Inc. using Adobe Illustrator.', 
+    'The sippy cup design originated with Amscan’s design team. I created the final mechanical using Adobe Illustrator. The photos are the actual item sold at Party City stores for comparison.', 
+    'Sippy Cup designed by me for Amscan, Inc. alongside photos of the actual item sold at Party City stores for comparison.', 
+    'Party favor designed by me for Amscan, Inc. alongside photos of the actual item sold at Party City stores for comparison.', 
+    'Product and packaging designed by me for Amscan, Inc.', 
+    'Product designed by me for Amscan, Inc. This wine glass is part of a series of “upscale” plastic cups I designed which were made to look like fancy cut glass.'];
+    let currentImage8 = '';
+    let currentIndex8 = 0;
+
+    function openPopup8(image8, description8) {
+      currentImage8 = image8;
+      currentIndex8 = images8.indexOf(image8);
+      document.getElementById('popup-image8').src = image8;
+      document.getElementById('popup-description8').textContent = description8;
+      document.getElementById('popup8').style.display = 'block';
+    }
+
+    function closePopup8() {
+      document.getElementById('popup8').style.display = 'none';
+    }
+
+    function prevImage8() {
+      currentIndex8 = (currentIndex8 - 1 + images8.length) % images8.length;
+      currentImage8 = images8[currentIndex8];
+      document.getElementById('popup-image8').src = currentImage8;
+      document.getElementById('popup-description8').textContent = descriptions8[currentIndex8];
+    }
+
+    function nextImage8() {
+      currentIndex8 = (currentIndex8 + 1) % images8.length;
+      currentImage8 = images8[currentIndex8];
+      document.getElementById('popup-image8').src = currentImage8;
+      document.getElementById('popup-description8').textContent = descriptions8[currentIndex8];
+    }
+  </script>
+  <!-- Add the website footer -->
+  <footer>
+    <p>© 2023 Pierre Fontaine's Portfolio. All rights reserved.</p>
+    <p>Home: (914) 693-2356 | Mobile: (914) 413-2789</p>
+    <p>pfontaine123@hotmail.com </p>
+  </footer>
+</body>
+</html>

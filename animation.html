@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pierre Fontaine Portfolio</title>
+  <link rel="stylesheet" id="stylesheet" href="pierre.css">
+  <style>
+    #video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+  }
+  #video-container iframe {
+    display: none;
+  }
+  #video-container iframe.active {
+    display: block;
+  }
+  #video-switcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+  #video-switcher span {
+    cursor: pointer;
+    padding: 0 10px;
+  }
+  #video-switcher span.selected {
+    font-weight: bold;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pierre Fontaine Portfolio</h1>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aboutme.html">About Me</a>
+    <a href="illustrations.html">Illustrations</a>
+    <a href="animation.html" style="font-weight:bold;">Animation</a>
+    <a href="paper.html">Paper Engineering</a>
+    <a href="design.html">Design</a>
+  </nav><br><br>
+
+
+      <div id="video-container">
+        <iframe id="video1" width="888" height="500" src="https://www.youtube.com/embed/3ZvSpmKbaAI" frameborder="0" allowfullscreen></iframe>
+        <iframe id="video2" width="888" height="500" src="https://www.youtube.com/embed/VrXGAIvvOVA" frameborder="0" allowfullscreen></iframe>
+      </div>
+      
+      <div id="video-switcher">
+        <span id="video1-switch" class="selected" style="border: 1px black; font-size: 20px;">Amiga Animations</span>
+        <span id="video2-switch" style="border: 1px black; font-size: 20px;">Mentor for Home Shopping Network</span>
+      </div>
+      
+      <script>
+        const video1Switch = document.getElementById('video1-switch');
+        const video2Switch = document.getElementById('video2-switch');
+        const video1 = document.getElementById('video1');
+        const video2 = document.getElementById('video2');
+      
+        // Set the first video as active
+        video1.classList.add('active');
+      
+        // Add click event listeners to the video switches
+        video1Switch.addEventListener('click', function() {
+          video2Switch.classList.remove('selected');
+          video1Switch.classList.add('selected');
+          video2.classList.remove('active');
+          video1.classList.add('active');
+        });
+      
+        video2Switch.addEventListener('click', function() {
+          video1Switch.classList.remove('selected');
+          video2Switch.classList.add('selected');
+          video1.classList.remove('active');
+          video2.classList.add('active');
+        });
+      </script>
+  
+  <!-- Add the website footer -->
+  <footer>
+    <p>© 2023 Pierre Fontaine's Portfolio. All rights reserved.</p>
+    <p>Home: (914) 693-2356 | Mobile: (914) 413-2789</p>
+    <p>pfontaine123@hotmail.com </p>
+  </footer>
+</body>
+</html>

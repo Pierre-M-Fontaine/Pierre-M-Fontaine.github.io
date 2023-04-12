@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pierre Fontaine Portfolio</title>
+  <link rel="stylesheet" id="stylesheet" href="pierre.css">
+  <style>
+    .grid-container-freelance , .grid-container-amscan , .grid-container-personal {
+      display: grid;
+      padding-bottom: 100px;
+      margin-left: 100px;
+      cursor: pointer;
+    }
+    .grid-container-freelance {
+      grid-template-columns: repeat(2, 1fr) minmax(min-content, max-content);
+    }
+    .grid-container-amscan {
+      grid-template-columns: repeat(3, 1fr) minmax(min-content, max-content);
+    }
+    .grid-container-personal {
+      grid-template-columns: repeat(3, 1fr) minmax(min-content, max-content);
+    }
+    .grid-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffffff;
+      max-width: 75%;
+    }
+
+    @media screen and (max-width: 1000px) {
+      .grid-container-freelance , .grid-container-amscan , .grid-container-personal{
+        grid-template-columns: 1fr;
+      }
+      .grid-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+    }
+    #video-switcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+  #video-switcher span {
+    cursor: pointer;
+    padding: 0 10px;
+  }
+  #video-switcher span.selected {
+    font-weight: bold;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pierre Fontaine Portfolio</h1>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aboutme.html">About Me</a>
+    <a href="illustrations.html">Illustrations</a>
+    <a href="animation.html">Animation</a>
+    <a href="paper.html" style="font-weight:bold;">Paper Engineering</a>
+    <a href="design.html">Design</a>
+  </nav><br><br>
+  <iframe width="888" height="500" src="https://www.youtube.com/embed/IGNHnGtULYQ" frameborder="0" allowfullscreen></iframe>
+  <div id="video-switcher">
+    <span id="video1-switch" class="selected" style="border: 1px black; font-size: 20px;">Paper Models & Toys</span>
+  </div>
+  <br><br><br><br><h3 style="font-size:32px;">Other Paper Engineering Projects I have completed:</h3><br>
+  <h3 style="font-size:24px;">Personal Projects</h3>
+  <div class="grid-container-personal">
+    <div class="grid-item">
+        <img src="paper/Depot.jpg" onclick="openPopup7('paper/Depot.jpg', 'Designed as a downloadable PDF that can be printed on cardstock on any home printer and built using scissors and glue.')">
+        </div>
+      <div class="grid-item">
+        <img src="paper/Hudson.jpg" onclick="openPopup7('paper/Hudson.jpg', 'Designed as a downloadable PDF that can be printed on cardstock on any home printer and built using scissors and glue.')">
+      </div>
+      <div class="grid-item">
+        <img src="paper/Moonbase.jpg" onclick="openPopup7('paper/Moonbase.jpg', 'Designed as a downloadable PDF that can be printed on cardstock on any home printer and built using scissors and glue.')">
+      </div>
+  </div>
+  <h3 style="font-size:24px;">Freelance Projects</h3>
+  <div class="grid-container-freelance">
+    <div class="grid-item">
+        <img src="paper/cartmodel.bmp" onclick="openPopup3('paper/cartmodel.bmp', 'Designed as a downloadable PDF that can be printed on cardstock on any home printer and built using scissors and glue.')">
+    </div>
+      <div class="grid-item">
+        <img src="paper/Tug_Boat_Edit.jpg" onclick="openPopup3('paper/Tug_Boat_Edit.jpg', 'Designed as a downloadable PDF that can be printed on cardstock on any home printer and built using scissors and glue.')">
+      </div>
+  </div>
+  <h3 style="font-size:24px;">Amscan Projects</h3>
+  <div class="grid-container-amscan">
+      <div class="grid-item">
+        <img src="paper/Food_Truck_2_View.png" onclick="openPopup6('paper/Food_Truck_2_View.png', 'Designed by me for Amscan, Inc. This product ships flat and is folded open to create a table display that holds napkins, utensils and various condiments.')">
+      </div>
+      <div class="grid-item">
+        <img src="paper/Ghost_CP.jpg" onclick="openPopup6('paper/Ghost_CP.jpg', 'Proof on concept design of a 3D centerpiece that ships flat and is folded open to create a table display. The fringe is a separate piece that wraps around the centerpiece.')">
+      </div>
+      <div class="grid-item">
+        <img src="paper/Tiki_Hut_Edit.png" onclick="openPopup6('paper/Tiki_Hut_Edit.png', 'Designed by me for Amscan, Inc. This product ships flat and is folded open to create a table display that holds napkins, utensils and various condiments.')">
+      </div>
+  </div>
+  <div class="popup" id="popup7">
+    <div class="popup-content">
+      <span class="close7" onclick="closePopup7()">X</span>
+      <img class="popup-image" id="popup-image7">
+      <p id="popup-description7"></p>
+      <a class="prev" onclick="prevImage7()">&#10094;</a>
+      <a class="next" onclick="nextImage7()">&#10095;</a>
+    </div>
+  </div>
+  <div class="popup" id="popup3">
+    <div class="popup-content">
+      <span class="close3" onclick="closePopup3()">X</span>
+      <img class="popup-image" id="popup-image3">
+      <p id="popup-description3"></p>
+      <a class="prev" onclick="prevImage3()">&#10094;</a>
+      <a class="next" onclick="nextImage3()">&#10095;</a>
+    </div>
+  </div>
+  <div class="popup" id="popup6">
+    <div class="popup-content">
+      <span class="close6" onclick="closePopup6()">X</span>
+      <img class="popup-image" id="popup-image6">
+      <p id="popup-description6"></p>
+      <a class="prev" onclick="prevImage6()">&#10094;</a>
+      <a class="next" onclick="nextImage6()">&#10095;</a>
+    </div>
+  </div>
+  <script id="image_pop_7">
+    let images7 = ['paper/Depot.jpg', 'paper/Hudson.jpg', 'paper/Moonbase.jpg'];
+    let descriptions7 = ['Designed as a downloadable PDF that can be printed on cardstock on any home printer and built using scissors and glue.', 
+    'Designed as a downloadable PDF that can be printed on cardstock on any home printer and built using scissors and glue.', 
+    'Designed as a downloadable PDF that can be printed on cardstock on any home printer and built using scissors and glue.'];
+    let currentImage7 = '';
+    let currentIndex7 = 0;
+
+    function openPopup7(image7, description7) {
+      currentImage7 = image7;
+      currentIndex7 = images7.indexOf(image7);
+      document.getElementById('popup-image7').src = image7;
+      document.getElementById('popup-description7').textContent = description7;
+      document.getElementById('popup7').style.display = 'block';
+    }
+
+    function closePopup7() {
+      document.getElementById('popup7').style.display = 'none';
+    }
+
+    function prevImage7() {
+      currentIndex7 = (currentIndex7 - 1 + images7.length) % images7.length;
+      currentImage7 = images7[currentIndex7];
+      document.getElementById('popup-image7').src = currentImage7;
+      document.getElementById('popup-description7').textContent = descriptions7[currentIndex7];
+    }
+
+    function nextImage7() {
+      currentIndex7 = (currentIndex7 + 1) % images7.length;
+      currentImage7 = images7[currentIndex7];
+      document.getElementById('popup-image7').src = currentImage7;
+      document.getElementById('popup-description7').textContent = descriptions7[currentIndex7];
+    }
+  </script>
+  <script id="image_pop_6">
+    let images6 = ['paper/Food_Truck_2_View.png', 'paper/Ghost_CP.jpg', 'paper/Tiki_Hut_Edit.png'];
+    let descriptions6 = ['Designed by me for Amscan, Inc. This product ships flat and is folded open to create a table display that holds napkins, utensils and various condiments.', 
+    'Proof on concept design of a 3D centerpiece that ships flat and is folded open to create a table display. The fringe is a separate piece that wraps around the centerpiece.', 
+    'Designed by me for Amscan, Inc. This product ships flat and is folded open to create a table display.'];
+    let currentImage6 = '';
+    let currentIndex6 = 0;
+
+    function openPopup6(image6, description6) {
+      currentImage6 = image6;
+      currentIndex6 = images6.indexOf(image6);
+      document.getElementById('popup-image6').src = image6;
+      document.getElementById('popup-description6').textContent = description6;
+      document.getElementById('popup6').style.display = 'block';
+    }
+
+    function closePopup6() {
+      document.getElementById('popup6').style.display = 'none';
+    }
+
+    function prevImage6() {
+      currentIndex6 = (currentIndex6 - 1 + images6.length) % images6.length;
+      currentImage6 = images6[currentIndex6];
+      document.getElementById('popup-image6').src = currentImage6;
+      document.getElementById('popup-description6').textContent = descriptions6[currentIndex6];
+    }
+
+    function nextImage6() {
+      currentIndex6 = (currentIndex6 + 1) % images6.length;
+      currentImage6 = images6[currentIndex6];
+      document.getElementById('popup-image6').src = currentImage6;
+      document.getElementById('popup-description6').textContent = descriptions6[currentIndex6];
+    }
+  </script>
+  <script id="image_pop_3">
+    let images3 = ['paper/cartmodel.bmp', 'paper/Tug_Boat_Edit.jpg'];
+    let descriptions3 = ['Designed as a downloadable PDF that can be printed on cardstock on any home printer and built using scissors and glue.', 
+    'Designed as a downloadable PDF that can be printed on cardstock on any home printer and built using scissors and glue.'];
+    let currentImage3 = '';
+    let currentIndex3 = 0;
+
+    function openPopup3(image3, description3) {
+      currentImage3 = image3;
+      currentIndex3 = images3.indexOf(image3);
+      document.getElementById('popup-image3').src = image3;
+      document.getElementById('popup-description3').textContent = description3;
+      document.getElementById('popup3').style.display = 'block';
+    }
+
+    function closePopup3() {
+      document.getElementById('popup3').style.display = 'none';
+    }
+
+    function prevImage3() {
+      currentIndex3 = (currentIndex3 - 1 + images3.length) % images3.length;
+      currentImage3 = images3[currentIndex3];
+      document.getElementById('popup-image3').src = currentImage3;
+      document.getElementById('popup-description3').textContent = descriptions3[currentIndex3];
+    }
+
+    function nextImage3() {
+      currentIndex3 = (currentIndex3 + 1) % images3.length;
+      currentImage3 = images3[currentIndex3];
+      document.getElementById('popup-image3').src = currentImage3;
+      document.getElementById('popup-description3').textContent = descriptions3[currentIndex3];
+    }
+  </script>
+  <!-- Add the website footer -->
+  <footer>
+    <p>© 2023 Pierre Fontaine's Portfolio. All rights reserved.</p>
+    <p>Home: (914) 693-2356 | Mobile: (914) 413-2789</p>
+    <p>pfontaine123@hotmail.com </p>
+  </footer>
+</body>
+</html>

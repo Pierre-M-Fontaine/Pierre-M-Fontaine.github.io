@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Roboto+Condensed&display=swap');
+/*
+@font-face {
+  font-family: 'Futura';
+  src: url('Futura/Futura_Regular/Futura_Regular.ttf');
+}*/
+
+body {
+    margin: 0 12.5%;
+    /*font-family: Futura, sans-serif;
+    font-family: Futura;*/
+    font-family: 'Roboto Condensed', sans-serif;
+    width: 75%;
+    background-color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  header {
+    color: #000000;
+    text-align: center;
+    position: Relative;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    top:0;
+    padding-bottom:1px;
+  }
+
+  /*@media screen and (max-width: 800px) {
+    header {
+      height: 300px;
+    }
+  }*/
+  
+  nav {
+    background-color: #ffffff;
+    overflow: hidden;
+    height: 50px;
+    position: relative;
+    width: 100%;
+    /*margin: 20px auto 0;*/
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  nav a {
+    display: inline-block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    font-weight: bold;
+  }
+  @media screen and (max-width: 1000px) {
+    nav {
+      overflow-x:auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      height: 60px;
+    }
+  }
+  
+  footer {
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+  .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.75);
+      z-index: 1;
+  }
+  .popup-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 50%;
+      height: 50%;
+  }
+  .popup-image {
+      max-width: 100%;
+      max-height: 100%;
+  }
+  .popup-image2 {
+    max-width: 100%;
+    max-height: 100%;
+}
+  .popup-image1 {
+    max-width: 100%;
+    max-height: 100%;
+}
+  #popup-description1 , #popup-description2 , #popup-description3 , #popup-description4 , #popup-description5 , #popup-description6 , #popup-description7 , #popup-description8{
+    color: #ffffff;
+    font-size: 28px;
+  }
+  .close1 , .close2 , .close3 , .close4 , .close5 , .close6 , .close7 , .close8{
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+      font-size: 20px;
+      color: white;
+      cursor: pointer;
+  }
+  .prev,
+  .next {
+      position: absolute;
+      top: 50%;
+      font-size: 30px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      z-index: 1;
+  }
+  .prev {
+      left: -25px;
+  }
+  .next {
+      right: -25px;
+  }
+  table {
+      width: 75%;
+      margin: 0 12.5%;
+  }
+  td {
+      width: 25%;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 0px;
+      text-align: center;
+  }
+
+  img {
+      max-width: 100%;
+      max-height: 100%;
+  }
+  #family {
+    height: 500px;
+  }
+  @media screen and (max-width: 800px) {
+    img , #family {
+      max-height: 75%;
+      max-width: 75%;
+    }
+  }
+
+  #about-resume {
+    /* Add your styles here */
+    background-color: #f8f8f8;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    width: 75%;
+    margin: 0 12.5%;
+  }
+  
+  #about-resume h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+  }
+
+  #about-resume h3 {
+    font-size: 26px;
+  }
+  
+  #about-resume h4 {
+    font-size: 22px;
+    text-align: left;
+    font-weight: bold;
+  }
+  #about-resume h6 {
+    font-size: 18px;
+    text-align: left;
+  }
+  
+  #about-resume p {
+    font-size: 16px;
+    text-align:left;
+  }
+  
+  #about-resume a {
+    color: #000000;
+  }
+
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  .mySlides {
+    display: none;
+  }
+/*
+  .mySlides img {
+    max-width: 675px;
+    max-height: 675px;
+  }
+  */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  

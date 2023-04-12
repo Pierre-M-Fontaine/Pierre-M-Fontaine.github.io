@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pierre Fontaine Portfolio</title>
+  <link rel="stylesheet" id="stylesheet" href="pierre.css">
+  <meta name="keywords" content="2D Illustrations, 3D Illustration, Design, Paper Models, Paper Engineering, Pierre Fontaine">
+</head>
+<body>
+  <header>
+    <h1>Pierre Fontaine Portfolio</h1>
+  </header>
+  <nav>
+    <a href="index.html" style="font-weight:bold;">Home</a>
+    <a href="aboutme.html">About Me</a>
+    <a href="illustrations.html">Illustrations</a>
+    <a href="animation.html">Animation</a>
+    <a href="paper.html">Paper Engineering</a>
+    <a href="design.html">Design</a>
+  </nav>
+  
+  <!-- Add the main content of the website here -->
+
+  <p></p><br>
+  <table>
+    <tr>
+      <td>
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <img src="2D_illi/cartoon/nightshirt_copy.jpg" style="max-height:500px; padding-left:1em;">
+          </div>
+          <div class="mySlides fade">
+            <img src="2D_illi/space/curvy_ship.jpg" style="max-height: 500px;">
+          </div>
+          <div class="mySlides fade">
+            <img src="2D_illi/3D_misc/Flamingo_Cup_Side.png" style="max-height: 500px;">
+          </div>
+          <div class="mySlides fade">
+            <img src="paper/Hudson.jpg" style="max-height: 500px;">
+          </div>
+        </div><br>
+        <script>
+          var slideIndex = 0;
+          showSlides();
+          function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+              slideIndex = 1;
+            }
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 5000);
+          }
+        </script>
+      </td>
+    </tr>
+  </table>
+  
+  <!-- Add the website footer -->
+  <footer>
+    <p>© 2023 Pierre Fontaine's Portfolio. All rights reserved.</p>
+    <p>Home: (914) 693-2356 | Mobile: (914) 413-2789</p>
+    <p>pfontaine123@hotmail.com </p>
+  </footer>
+</body>
+</html>
