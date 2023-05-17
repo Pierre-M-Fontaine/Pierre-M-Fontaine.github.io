@@ -108,7 +108,7 @@ body {
 }
   #popup-description1 , #popup-description2 , #popup-description3 , #popup-description4 , #popup-description5 , #popup-description6 , #popup-description7 , #popup-description8{
     color: #ffffff;
-    font-size: 28px;
+    font-size: 24px;
   }
   .close1 , .close2 , .close3 , .close4 , .close5 , .close6 , .close7 , .close8{
       position: absolute;

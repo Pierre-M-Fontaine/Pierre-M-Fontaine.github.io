@@ -11,7 +11,7 @@
       cursor: pointer;
     }
     .grid-container-freelance {
-      grid-template-columns: repeat(2, 1fr) minmax(min-content, max-content);
+      grid-template-columns: repeat(3, 1fr) minmax(min-content, max-content);
     }
     .grid-container-amscan {
       grid-template-columns: repeat(3, 1fr) minmax(min-content, max-content);
@@ -89,6 +89,9 @@
     </div>
       <div class="grid-item">
         <img src="paper/Tug_Boat_Edit.jpg" onclick="openPopup3('paper/Tug_Boat_Edit.jpg', 'Designed as a downloadable PDF that can be printed on cardstock on any home printer and built using scissors and glue.')">
+      </div>
+      <div class="grid-item">
+        <img src="paper/Odell_House_Model_Front Left.png" onclick="openPopup3('paper/Odell_House_Model_Front Left.png', 'This paper model of the Odell House was donated to the Friends of the Odell House-Rochambeau Headquarters historic organization. It will be used as a learning activity for middle school classes who plan to visit the historic site which is currently undergoing renovation.')">
       </div>
   </div>
   <h3 style="font-size:24px;">Amscan Projects</h3>
@@ -199,9 +202,10 @@
     }
   </script>
   <script id="image_pop_3">
-    let images3 = ['paper/cartmodel.bmp', 'paper/Tug_Boat_Edit.jpg'];
+    let images3 = ['paper/cartmodel.bmp', 'paper/Tug_Boat_Edit.jpg', 'paper/Odell_House_Model_Front Left.png'];
     let descriptions3 = ['Designed as a downloadable PDF that can be printed on cardstock on any home printer and built using scissors and glue.', 
-    'Designed as a downloadable PDF that can be printed on cardstock on any home printer and built using scissors and glue.'];
+    'Designed as a downloadable PDF that can be printed on cardstock on any home printer and built using scissors and glue.',
+    'This paper model of the Odell House was donated to the Friends of the Odell House-Rochambeau Headquarters historic organization. It will be used as a learning activity for middle school classes who plan to visit the historic site which is currently undergoing renovation.'];
     let currentImage3 = '';
     let currentIndex3 = 0;
 
